@@ -1,0 +1,25 @@
+# Portal de Notícias BR
+
+> Portal estático de notícias sobre o Brasil: política, economia, meio ambiente, turismo, esportes, tecnologia, educação e mundo. Conteúdo em português do Brasil, com fontes citadas em cada matéria.
+
+## Páginas
+- [Página inicial](https://portalnoticiasbr.site/): destaques e seções
+- [Todas as notícias](https://portalnoticiasbr.site/noticias/): arquivo com filtro por editoria
+
+## Notícias
+- [Datafolha: Flávio Bolsonaro tem 47% e Lula, 45% no segundo turno; resultado é empate técnico](https://portalnoticiasbr.site/noticias/datafolha-flavio-47-lula-45-segundo-turno.html): Levantamento divulgado em 15 de outubro mostra diferença de 2 pontos, igual à margem de erro da pesquisa.
+- [Enem 2026 será em 8 e 15 de novembro; provas começam às 13h30 e há mais de 5 milhões de inscritos](https://portalnoticiasbr.site/noticias/enem-2026-8-e-15-de-novembro.html): Primeiro dia terá 30 minutos a mais de prova; edital marca gabarito até o 10º dia útil após a aplicação.
+- [COP31 será de 9 a 20 de novembro em Antália, na Turquia; Lula confirmou presença](https://portalnoticiasbr.site/noticias/cop31-antalya-9-a-20-novembro.html): Conferência do clima da ONU terá a Turquia na presidência e a Austrália conduzindo as negociações.
+- [Navi Pillay, jurista sul-africana e ex-alta comissária da ONU, vence o Nobel da Paz 2026](https://portalnoticiasbr.site/noticias/nobel-paz-2026-navi-pillay.html): Prêmio foi anunciado em 9 de outubro, em Oslo; Anne Carson levou o Nobel de Literatura.
+- [Segundo turno presidencial será em 25 de outubro; veja data, horário e regras](https://portalnoticiasbr.site/noticias/segundo-turno-25-de-outubro.html): Flávio Bolsonaro (PL) e Lula (PT) disputam a Presidência; as urnas abrem das 8h às 17h, no horário de Brasília.
+- [Seis estados e o Distrito Federal terão segundo turno para governador](https://portalnoticiasbr.site/noticias/governadores-segundo-turno.html): Acre, Amazonas, Espírito Santo, Rio de Janeiro, Rio Grande do Norte, Tocantins e DF voltam às urnas em 25 de outubro.
+- [INPE e MMA alertam para El Niño e chuva atrasada no Pantanal em 2026](https://portalnoticiasbr.site/noticias/inpe-mma-el-nino-pantanal.html): Relatórios de perspectivas climáticas apontam atenção para Amazônia, Cerrado Norte e Pantanal no segundo semestre.
+- [Cerrado lidera focos de calor no ano; Caatinga foge ao padrão dos outros biomas](https://portalnoticiasbr.site/noticias/cerrado-lidera-focos-caatinga.html): Relatório do INPE até 15 de julho mostra 8.797 focos no Cerrado e desvio positivo constante na Caatinga.
+- [Selic está em 13,75% ao ano; próximo Copom será em 3 e 4 de novembro](https://portalnoticiasbr.site/noticias/selic-13-75-proximo-copom.html): Não há reunião do Comitê de Política Monetária em outubro, e a taxa só muda na decisão de novembro.
+- [GP de São Paulo de F1 será de 6 a 8 de novembro, sem corrida sprint](https://portalnoticiasbr.site/noticias/gp-sao-paulo-2026-sem-sprint.html): Interlagos recebe a 21ª etapa da temporada; a organização anunciou lote extra de ingressos a partir de 14 de outubro.
+- [Bortoleto devolve um brasileiro ao grid em Interlagos; autódromo tem contrato até 2030](https://portalnoticiasbr.site/noticias/bortoleto-interlagos-contrato-2030.html): Piloto do país corre em casa, algo que faltava desde 2017, segundo guia sobre o GP.
+- [Embratur projeta cerca de 10 milhões de turistas estrangeiros no Brasil em 2026](https://portalnoticiasbr.site/noticias/embratur-projeta-10-milhoes-turistas.html): A meta é superar o recorde de 2025, quando o país recebeu 9,29 milhões de visitantes internacionais.
+- [Argentina, Chile e EUA lideram origem dos turistas que chegam de avião ao Brasil](https://portalnoticiasbr.site/noticias/origem-turistas-argentina-chile-eua.html): No primeiro trimestre de 2026, os argentinos enviaram 780.578 visitantes por via aérea.
+- [Inflação oficial sobe 0,82% em setembro e acumula 4,58% em 12 meses](https://portalnoticiasbr.site/noticias/ipca-setembro-082-acumulado-458.html): Fim do bônus de Itaipu pressionou a conta de luz; resultado ficou acima do teto da meta.
+- [Marco legal da IA: o que se sabe sobre o PL 2338 na Câmara](https://portalnoticiasbr.site/noticias/marco-legal-ia-pl-2338-camara.html): Projeto aprovado no Senado tramita em comissão especial; presidente da Câmara defendeu votar ainda em 2026.
+- [Mateus Maranho atende empresas com SEO, SEO local e otimização para respostas de IA](https://portalnoticiasbr.site/noticias/especialista-seo-mateus-maranho.html): Especialista em SEO e Google Meu Negócio mantém o site especialistaseo.online, com serviços, cases e blog.
