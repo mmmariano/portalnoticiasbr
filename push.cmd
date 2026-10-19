@@ -7,15 +7,6 @@ echo   ATUALIZANDO PROJETO NO GITHUB
 echo ========================================
 echo.
 
-git init
-git branch -M main
-git remote add origin https://github.com/mmmariano/portalnoticiasbr.git
-git fetch origin
-git reset origin/main
-git add .
-git commit -m "Atualizacao do site"
-git push origin main
-
 git add .
 
 git diff --cached --quiet
