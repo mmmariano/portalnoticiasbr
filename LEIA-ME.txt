@@ -6,4 +6,4 @@ COMO TROCAR AS FOTOS PELAS DO PEXELS (uma vez so)
 4. Envie tudo para a hospedagem.
 
 Para adicionar noticias: edite noticias-dados.json, coloque uma palavra-chave em ingles no dicionario Q de pexels.py, rode os dois scripts.
-Sem imagens.json o site usa as imagens da pasta img/ (ja funciona assim).
+Sem imagens.json o site mostra so texto (sem imagens ilustrativas). Rode o pexels.py para colocar as fotos.
