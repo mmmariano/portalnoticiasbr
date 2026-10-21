@@ -1,10 +1,26 @@
 {
+ "agenda-dos-presidenciaveis-flavio-em-sp-e-fortaleza-lula-em-belo-horizonte": {
+  "id": "agenda-dos-presidenciaveis-flavio-em-sp-e-fortaleza-lula-em-belo-horizonte",
+  "url": "img/segundo-turno-25-de-outubro.png",
+  "page": "",
+  "by": "Arte EBC / Agência Brasil",
+  "alt": "Segundo turno das eleições 25 de outubro",
+  "local": true
+ },
  "qualidade-do-ar-melhora-em-manaus-mas-aulas-presenciais-seguem-suspensas": {
   "id": "qualidade-do-ar-melhora-em-manaus-mas-aulas-presenciais-seguem-suspensas",
   "url": "img/qualidade-do-ar-melhora-em-manaus-mas-aulas-presenciais-seguem-suspensas.jpg",
   "page": "",
   "by": "Reuters/Bruno Kelly via Agência Brasil",
   "alt": "Fumaça sobre Manaus",
+  "local": true
+ },
+ "negacionismo-impulsiona-sarampo-nos-eua-e-representa-ameaca-ao-brasil": {
+  "id": "negacionismo-impulsiona-sarampo-nos-eua-e-representa-ameaca-ao-brasil",
+  "url": "img/negacionismo-impulsiona-sarampo-nos-eua-e-representa-ameaca-ao-brasil.jpg",
+  "page": "",
+  "by": "Agência Brasil",
+  "alt": "Ilustrativa saúde",
   "local": true
  },
  "chuvas-e-tempestades-avancam-pelo-brasil-a-partir-desta-quarta": {
@@ -15,12 +31,28 @@
   "alt": "Nuvens de tempestade",
   "local": true
  },
- "ato-em-apoio-a-democracia-e-a-lula-reune-milhares-no-rio-e-brasilia": {
-  "id": "ato-em-apoio-a-democracia-e-a-lula-reune-milhares-no-rio-e-brasilia",
-  "url": "img/ato-em-apoio-a-democracia-e-a-lula-reune-milhares-no-rio-e-brasilia.jpg",
+ "governo-envia-ao-congresso-proposta-de-tarifa-zero-no-transporte": {
+  "id": "governo-envia-ao-congresso-proposta-de-tarifa-zero-no-transporte",
+  "url": "img/governo-envia-ao-congresso-proposta-de-tarifa-zero-no-transporte.svg",
   "page": "",
-  "by": "Rovena Rosa/Agência Brasil",
-  "alt": "Ato em Copacabana",
+  "by": "Arte Portal de Notícias BR",
+  "alt": "Governo envia ao Congresso proposta de tarifa zero no transporte",
+  "local": true
+ },
+ "comite-da-meta-aponta-falhas-na-protecao-de-eleicoes-e-cita-brasil": {
+  "id": "comite-da-meta-aponta-falhas-na-protecao-de-eleicoes-e-cita-brasil",
+  "url": "img/comite-da-meta-aponta-falhas-na-protecao-de-eleicoes-e-cita-brasil.svg",
+  "page": "",
+  "by": "Arte Portal de Notícias BR",
+  "alt": "Comitê da Meta aponta falhas na proteção de eleições e cita Brasil",
+  "local": true
+ },
+ "datafolha-empate-tecnico-entre-flavio-bolsonaro-e-lula-no-segundo-turno": {
+  "id": "datafolha-empate-tecnico-entre-flavio-bolsonaro-e-lula-no-segundo-turno",
+  "url": "img/datafolha-flavio-47-lula-45-segundo-turno.png",
+  "page": "",
+  "by": "Arte / dados Datafolha",
+  "alt": "Pesquisa Datafolha segundo turno",
   "local": true
  },
  "mp-eleitoral-pede-ampla-divulgacao-de-mudancas-de-locais-de-votacao": {
@@ -31,12 +63,36 @@
   "alt": "Eleitores em seção",
   "local": true
  },
- "negacionismo-impulsiona-sarampo-nos-eua-e-representa-ameaca-ao-brasil": {
-  "id": "negacionismo-impulsiona-sarampo-nos-eua-e-representa-ameaca-ao-brasil",
-  "url": "img/negacionismo-impulsiona-sarampo-nos-eua-e-representa-ameaca-ao-brasil.jpg",
+ "lei-que-perdoa-dividas-e-aumenta-limite-de-mei-e-sancionada": {
+  "id": "lei-que-perdoa-dividas-e-aumenta-limite-de-mei-e-sancionada",
+  "url": "img/lei-que-perdoa-dividas-e-aumenta-limite-de-mei-e-sancionada.svg",
   "page": "",
-  "by": "Agência Brasil",
-  "alt": "Ilustrativa saúde",
+  "by": "Arte Portal de Notícias BR",
+  "alt": "Lei que perdoa dívidas e aumenta limite de MEI é sancionada",
+  "local": true
+ },
+ "ato-em-apoio-a-democracia-e-a-lula-reune-milhares-no-rio-e-brasilia": {
+  "id": "ato-em-apoio-a-democracia-e-a-lula-reune-milhares-no-rio-e-brasilia",
+  "url": "img/ato-em-apoio-a-democracia-e-a-lula-reune-milhares-no-rio-e-brasilia.jpg",
+  "page": "",
+  "by": "Rovena Rosa/Agência Brasil",
+  "alt": "Ato em Copacabana",
+  "local": true
+ },
+ "procon-paulistano-multa-enel-por-falhas-no-fornecimento-de-energia": {
+  "id": "procon-paulistano-multa-enel-por-falhas-no-fornecimento-de-energia",
+  "url": "img/procon-paulistano-multa-enel-por-falhas-no-fornecimento-de-energia.svg",
+  "page": "",
+  "by": "Arte Portal de Notícias BR",
+  "alt": "Procon paulistano multa Enel por falhas no fornecimento de energia",
+  "local": true
+ },
+ "metro-de-sao-paulo-amplia-uso-do-pix-no-autoatendimento": {
+  "id": "metro-de-sao-paulo-amplia-uso-do-pix-no-autoatendimento",
+  "url": "img/metro-de-sao-paulo-amplia-uso-do-pix-no-autoatendimento.svg",
+  "page": "",
+  "by": "Arte Portal de Notícias BR",
+  "alt": "Metrô de São Paulo amplia uso do Pix no autoatendimento",
   "local": true
  }
 }

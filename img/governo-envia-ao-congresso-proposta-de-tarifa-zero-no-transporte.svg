@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 840" font-family="DejaVu Sans,Arial,sans-serif">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#10172a"/><stop offset="1" stop-color="#c1121f"/>
+</linearGradient></defs>
+<rect width="1600" height="840" fill="url(#g)"/>
+<rect x="85" y="113" width="12" height="124" fill="#fcbf49"/>
+<text x="125" y="165" font-size="46" font-weight="700" fill="#fff">POLÍTICA</text>
+<text x="90" y="300" font-size="56" font-weight="700" fill="#fff">Governo envia ao Congresso</text><text x="90" y="370" font-size="56" font-weight="700" fill="#fff">proposta de tarifa zero no</text><text x="90" y="440" font-size="56" font-weight="700" fill="#fff">transporte</text>
+<text x="90" y="790" font-size="34" font-weight="700" fill="#fff">portalnoticiasbr.site</text>
+</svg>
