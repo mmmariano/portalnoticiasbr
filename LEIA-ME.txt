@@ -1,0 +1,7 @@
+PORTAL DE NOTICIAS BR - portalnoticiasbr.site
+- mais-noticia.py : python mais-noticia.py --quantidade 6  (busca noticias reais da Agencia Brasil, baixa a foto, refaz o site)
+- build.py        : refaz o site inteiro a partir de noticias-dados.json (rodado automaticamente pelo mais-noticia.py)
+- push.cmd        : envia para github.com/mmmariano/portalnoticiasbr (cria o repositorio local e o remote na primeira vez)
+- deletar-tudo.cmd: apaga os arquivos do repositorio (pede confirmacao)
+Fluxo: python mais-noticia.py --quantidade 6  ->  push.cmd
+Fotos das materias de exemplo: LoremFlickr/Flickr (ilustrativas). As criadas pelo script usam a foto real da Agencia Brasil.

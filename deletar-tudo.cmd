@@ -1,9 +1,10 @@
 @echo off
 title Deletar todos os arquivos do repositorio
-cd /d "C:\Users\mtema\OneDrive\Desktop\portalnoticiasbr"
+cd /d "%~dp0"
 
 echo ========================================
 echo   DELETAR TODOS OS ARQUIVOS DO REPOSITORIO
+echo   github.com/mmmariano/portalnoticiasbr
 echo ========================================
 echo.
 echo ATENCAO: isto apaga todos os arquivos da pasta e do GitHub
