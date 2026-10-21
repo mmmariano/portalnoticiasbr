@@ -1,51 +1,60 @@
 #!/usr/bin/env python3
-"""Gera o site inteiro (chamado automaticamente pelo mais-noticia.py) (home, arquivo, materias, sitemap, rss, llms.txt, robots). Uso: python build.py"""
+"""Gera o site inteiro (home, arquivo, materias, sitemap, rss, llms.txt, robots). Uso: python build.py"""
 import json, os, re, html, datetime
 from email.utils import format_datetime
 B = "https://portalnoticiasbr.site"; NAME = "Portal de Notícias BR"
 E = html.escape
 arts = json.load(open("noticias-dados.json", encoding="utf-8"))
-arts.sort(key=lambda a: (a["date"], a.get("hora", "")), reverse=True)
-imgs = {}
+arts.sort(key=lambda a: a["date"], reverse=True)
+imgs = json.load(open("imagens.json", encoding="utf-8")) if os.path.exists("imagens.json") else {}
 CATS = ["Política","Economia","Meio Ambiente","Turismo","Esportes","Tecnologia","Educação","Mundo","Justiça","Saúde"]
 MES = "jan fev mar abr mai jun jul ago set out nov dez".split()
 def dt(d): y,m,dd = d.split("-"); return f"{int(dd)} {MES[int(m)-1]} {y}"
 def cut(t, n):
     t = re.sub(r"<[^>]+>", "", html.unescape(t)).strip()
     return t if len(t) <= n else t[:n].rsplit(" ", 1)[0].rstrip(",.;:") + "…"
-CATQ = {"Política":"brasilia,congress","Economia":"money,market","Meio Ambiente":"forest,river","Turismo":"beach,travel","Esportes":"football,stadium","Tecnologia":"technology,computer","Educação":"students,school","Mundo":"world,city","Justiça":"court,law","Saúde":"hospital,doctor","Cultura":"theater,art","Brasil":"brazil,city"}
-SLUGS = [x["slug"] for x in sorted(arts, key=lambda x: x["slug"])]
 def img(a):
-    for ext in ("jpg", "jpeg", "png", "webp"):
-        if os.path.exists(f'img/{a["slug"]}.{ext}'): return f'img/{a["slug"]}.{ext}', a.get("legenda") or "Foto: Agência Brasil (licença CC BY 3.0 BR)", None, False
-    kw = ",".join((a.get("q") or CATQ.get(a["cat"], "brazil")).split()[:2]) if " " in (a.get("q") or "") else CATQ.get(a["cat"], "brazil")
-    return f'https://loremflickr.com/1200/675/{kw}?lock={SLUGS.index(a["slug"])+201}', "Foto ilustrativa: Flickr (licença Creative Commons)", None, True
+    p = imgs.get(a["slug"])
+    if p:
+        url = p["url"]
+        by = p.get("by", "Agência Brasil")
+        alt = p.get("alt") or a["title"]
+        local = p.get("local") or url.startswith("img/")
+        return url, f"Foto: {by}", alt, local
+    return None
 def src(a, pre, full=False):
     r = img(a)
-    return r[0] if r[3] else (B + "/" if full else pre) + r[0]
+    if not r: return ""
+    url, _, _, local = r
+    if local and not url.startswith("http"):
+        # relative: from root use as-is; from noticias/ use ../
+        if pre == "../" or pre.startswith("../"):
+            return "../" + url if not url.startswith("../") else url
+        return url
+    return url
 def alt(a): return f'{a["title"]}'
 def jl(o): return '<script type="application/ld+json">' + json.dumps(o, ensure_ascii=False) + "</script>"
 def head(pre, title, desc, path, image, typ="website", extra=""):
     url = B + "/" + path
-    return f'''<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)}</title><meta name="description" content="{E(desc)}"><link rel="canonical" href="{url}"><link rel="alternate" hreflang="pt-BR" href="{url}"><link rel="alternate" type="application/rss+xml" title="{NAME}" href="{B}/rss.xml"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><meta name="theme-color" content="#1b1038"><meta name="author" content="{NAME}"><meta property="og:type" content="{typ}"><meta property="og:locale" content="pt_BR"><meta property="og:site_name" content="{NAME}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}">{f'<meta property="og:image" content="{image}">' if image else ""}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{E(title)}"><meta name="twitter:description" content="{E(desc)}">{f'<meta name="twitter:image" content="{image}">' if image else ""}<link rel="icon" type="image/png" href="{pre}favicon.png"><link rel="apple-touch-icon" href="{pre}favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&family=Lora:wght@600;700&display=swap" onload="this.rel='stylesheet'"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&family=Lora:wght@600;700&display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="{pre}assets/style.css">{extra}</head>'''
+    return f'''<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)}</title><meta name="description" content="{E(desc)}"><link rel="canonical" href="{url}"><link rel="alternate" hreflang="pt-BR" href="{url}"><link rel="alternate" type="application/rss+xml" title="{NAME}" href="{B}/rss.xml"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><meta name="theme-color" content="#10172a"><meta name="author" content="{NAME}"><meta property="og:type" content="{typ}"><meta property="og:locale" content="pt_BR"><meta property="og:site_name" content="{NAME}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}">{f'<meta property="og:image" content="{image}">' if image else ""}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{E(title)}"><meta name="twitter:description" content="{E(desc)}">{f'<meta name="twitter:image" content="{image}">' if image else ""}<link rel="icon" type="image/png" href="{pre}favicon.png"><link rel="apple-touch-icon" href="{pre}favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700;800&display=swap" onload="this.rel='stylesheet'"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700;800&display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="{pre}assets/style.css">{extra}</head>'''
 def top(pre, cur=""):
     nav = "".join(f'<a href="{pre}index.html#{c.lower()}">{c}</a>' for c in CATS)
     tk = "".join(f'<span>● {E(a["title"])}</span>' for a in arts[:12]) * 2
-    return f'''<body><a class="skip" href="#c">Pular para o conteúdo</a><div class="top"><div class="w"><span>{datetime.date.today().strftime("%d/%m/%Y")}</span><span>Fotos: Pexels · Dados: fontes citadas em cada matéria</span></div></div><header><div class="w"><a class="lg" href="{pre}index.html" aria-label="{NAME}"><b>PN</b>BR<small>Portal de Notícias</small></a><nav aria-label="Editorias">{nav}<a href="{pre}noticias/index.html">Todas</a></nav></div></header><div class="tk" aria-hidden="true"><div>{tk}</div></div>'''
-def foot(pre): return f'''<footer><div class="w"><div><b class="lg" style="font-size:1.4rem;color:#fff"><b>PN</b>BR</b><p>Notícias sobre o Brasil: política, economia, meio ambiente, turismo, esportes, tecnologia, educação, saúde e mundo.</p></div><div><a href="{pre}noticias/index.html">Todas as notícias</a> · <a href="{pre}rss.xml">RSS</a> · <a href="{pre}sitemap.xml">Sitemap</a> · <a href="{pre}llms.txt">llms.txt</a><p>Fotos do Pexels (licença gratuita); fontes de cada matéria no fim do texto.</p></div></div></footer>'''
+    return f'''<body><a class="skip" href="#c">Pular para o conteúdo</a><div class="top"><div class="w"><span>{datetime.date.today().strftime("%d/%m/%Y")}</span><span>Fotos: Pexels · Dados: fontes citadas em cada matéria</span></div></div><header><div class="w"><a class="lg" href="{pre}index.html"><b>Portal</b>de Notícias BR</a><nav aria-label="Editorias">{nav}<a href="{pre}noticias/index.html">Todas</a></nav></div></header><div class="tk" aria-hidden="true"><div>{tk}</div></div>'''
+def foot(pre): return f'''<footer><div class="w"><div><b class="lg" style="font-size:1.4rem;color:#fff">{NAME}</b><p>Notícias sobre o Brasil: política, economia, meio ambiente, turismo, esportes, tecnologia, educação, saúde e mundo.</p></div><div><a href="{pre}noticias/index.html">Todas as notícias</a> · <a href="{pre}rss.xml">RSS</a> · <a href="{pre}sitemap.xml">Sitemap</a> · <a href="{pre}llms.txt">llms.txt</a><p>Fotos do Pexels (licença gratuita); fontes de cada matéria no fim do texto.</p></div></div></footer>'''
 def card(a, pre, first=False):
-    return f'''<a class="cd" href="{pre}noticias/{a["slug"]}.html">{f'<figure><img src="{src(a,pre)}" alt="{E(alt(a))}" width="800" height="500" loading="lazy" decoding="async"></figure>' if src(a,pre) else f'<figure style="display:none"><i class="ph" data-s="{a["slug"]}" data-a="{E(alt(a))}"></i></figure>'}<div class="b"><span class="tg">{a["cat"]}</span><h3>{E(a["title"])}</h3><p>{E(cut(a["lead"],150))}</p><small>{dt(a["date"])} · {a["mins"]} min de leitura</small></div></a>'''
+    return f'''<a class="cd" href="{pre}noticias/{a["slug"]}.html">{f'<figure><img src="{src(a,pre)}" alt="{E(alt(a))}" width="800" height="500" loading="lazy" decoding="async"></figure>' if src(a,pre) else ''}<div class="b"><span class="tg">{a["cat"]}</span><h3>{E(a["title"])}</h3><p>{E(cut(a["lead"],150))}</p><small>{dt(a["date"])} · {a["mins"]} min de leitura</small></div></a>'''
 def write(p, s): os.makedirs(os.path.dirname(p) or ".", exist_ok=True); open(p, "w", encoding="utf-8").write(s)
 org = {"@type": "NewsMediaOrganization", "@id": B + "/#org", "name": NAME, "url": B + "/", "logo": {"@type": "ImageObject", "url": B + "/favicon.png"}}
 
 # ---- HOME ----
 hero = arts[:5]; big = arts[5]
-sl = "".join(f'<article class="sl{" on" if i==0 else ""}">{f'<img src="{src(a,"")}" alt="{E(alt(a))}" width="1600" height="900" {"fetchpriority=high" if i==0 else "loading=lazy"} decoding="async">' if src(a,"") else f'<i class="ph" data-s="{a["slug"]}" data-a="{E(alt(a))}"></i>'}<div class="t"><span class="tg">{a["cat"]}</span><h2><a href="noticias/{a["slug"]}.html">{E(a["title"])}</a></h2><p>{E(cut(a["lead"],160))}</p></div></article>' for i, a in enumerate(hero))
+sl = "".join(f'<article class="sl{" on" if i==0 else ""}">{f'<img src="{src(a,"")}" alt="{E(alt(a))}" width="1600" height="900" {"fetchpriority=high" if i==0 else "loading=lazy"} decoding="async">' if src(a,"") else ''}<div class="t"><span class="tg">{a["cat"]}</span><h2><a href="noticias/{a["slug"]}.html">{E(a["title"])}</a></h2><p>{E(cut(a["lead"],160))}</p></div></article>' for i, a in enumerate(hero))
 rk = "".join(f'<a href="noticias/{a["slug"]}.html"><b>{i+1}</b><span>{E(a["title"])}</span></a>' for i, a in enumerate(arts[:5]))
 secs = "".join(f'<h2 class="sc" id="{c.lower()}">{c}<a href="noticias/index.html">Ver todas →</a></h2><div class="gr">{"".join(card(a,"") for a in arts if a["cat"]==c)}</div>' for c in CATS if any(a["cat"]==c for a in arts))
 hd = f"{NAME}: política, economia, saúde e esportes"; hdesc = cut("Notícias atualizadas do Brasil e do mundo: segundo turno das eleições, economia, saúde, meio ambiente, esportes e tecnologia, com fontes citadas em cada matéria.", 155)
 home = head("", hd, hdesc, "", src(arts[0], "", True), extra=jl({"@context": "https://schema.org", "@graph": [org, {"@type": "WebSite", "url": B + "/", "name": NAME, "inLanguage": "pt-BR", "publisher": {"@id": B + "/#org"}}, {"@type": "CollectionPage", "name": hd, "url": B + "/", "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f'{B}/noticias/{a["slug"]}.html', "name": a["title"]} for i, a in enumerate(arts[:20])]}}]}))
-home += top("") + f'<section class="hero" aria-label="Destaques">{sl}<div class="ct"><div class="dt"></div><button id="pv" aria-label="Anterior">‹</button><button id="nx" aria-label="Próximo">›</button></div></section><main class="w" id="c"><h1 class="sr">{NAME}: notícias sobre o Brasil</h1><h2 class="sc">Em destaque</h2><div class="mag"><a class="big" href="noticias/{big["slug"]}.html">{f'<img src="{src(big,"")}" alt="{E(alt(big))}" width="1200" height="800" loading="lazy" decoding="async">' if src(big,"") else f'<i class="ph" data-s="{big["slug"]}" data-a="{E(alt(big))}"></i>'}<div><span class="tg">{big["cat"]}</span><h3>{E(big["title"])}</h3><p>{E(cut(big["lead"],150))}</p></div></a><aside class="rk"><h3>Mais lidas</h3>{rk}</aside></div>{secs}</main>' + foot("") + """<script>var s=document.querySelectorAll('.sl'),d=document.querySelector('.dt'),i=0,t;s.forEach(function(_,k){var e=document.createElement('i');e.onclick=function(){g(k)};d.appendChild(e)});function g(n){s[i].classList.remove('on');d.children[i].classList.remove('on');i=(n+s.length)%s.length;s[i].classList.add('on');d.children[i].classList.add('on')}function a(){clearInterval(t);t=setInterval(function(){g(i+1)},6000)}document.getElementById('pv').onclick=function(){g(i-1);a()};document.getElementById('nx').onclick=function(){g(i+1);a()};g(0);a()</script></body></html>"""
+home += top("") + f'<section class="hero" aria-label="Destaques">{sl}<div class="ct"><div class="dt"></div><button id="pv" aria-label="Anterior">‹</button><button id="nx" aria-label="Próximo">›</button></div></section><main class="w" id="c"><h1 class="sr">{NAME}: notícias sobre o Brasil</h1><h2 class="sc">Em destaque</h2><div class="mag"><a class="big" href="noticias/{big["slug"]}.html">{f'<img src="{src(big,"")}" alt="{E(alt(big))}" width="1200" height="800" loading="lazy" decoding="async">' if src(big,"") else ''}<div><span class="tg">{big["cat"]}</span><h3>{E(big["title"])}</h3><p>{E(cut(big["lead"],150))}</p></div></a><aside class="rk"><h3>Mais lidas</h3>{rk}</aside></div>{secs}</main>' + foot("") + """<script>var s=document.querySelectorAll('.sl'),d=document.querySelector('.dt'),i=0,t;s.forEach(function(_,k){var e=document.createElement('i');e.onclick=function(){g(k)};d.appendChild(e)});function g(n){s[i].classList.remove('on');d.children[i].classList.remove('on');i=(n+s.length)%s.length;s[i].classList.add('on');d.children[i].classList.add('on')}function a(){clearInterval(t);t=setInterval(function(){g(i+1)},6000)}document.getElementById('pv').onclick=function(){g(i-1);a()};document.getElementById('nx').onclick=function(){g(i+1);a()};g(0);a()</script></body></html>"""
 write("index.html", home)
 
 # ---- ARQUIVO ----
@@ -56,9 +65,9 @@ write("noticias/index.html", arq)
 
 # ---- MATERIAS ----
 for a in arts:
-    r = img(a); cr = r[1]; full = src(a, "../", True); path = f'noticias/{a["slug"]}.html'; url = f"{B}/{path}"
+    r = img(a); cr = r[1] if r else ""; full = src(a, "../", True); path = f'noticias/{a["slug"]}.html'; url = f"{B}/{path}"
     ttl = cut(a["title"], 60) + f" | {NAME}" if len(a["title"]) > 60 else f'{a["title"]} | {NAME}'
-    desc = cut(a["lead"], 155); iso = a["date"] + "T" + a.get("hora", "09:00") + ":00-03:00"
+    desc = cut(a["lead"], 155); iso = a["date"] + "T09:00:00-03:00"
     body = "".join(f"<p>{p}</p>" for p in a["body"])
     facts = f'<div class="fc"><h2>Em resumo</h2><ul>{"".join(f"<li>{f}</li>" for f in a["facts"])}</ul></div>' if a["facts"] else ""
     rel = [r for r in arts if r["cat"] == a["cat"] and r is not a][:3]
@@ -67,7 +76,7 @@ for a in arts:
         {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": B + "/"}, {"@type": "ListItem", "position": 2, "name": a["cat"], "item": f'{B}/#{a["cat"].lower()}'}, {"@type": "ListItem", "position": 3, "name": a["title"], "item": url}]}]})
     pg = head("../", ttl, desc, path, full, "article", ld + f'<meta property="article:published_time" content="{iso}"><meta property="article:section" content="{a["cat"]}">')
     pg += top("../").replace("<body>", '<body><div class="pb" id="pb"></div>', 1)
-    pg += f'{f'<figure class="cv"><img src="{full}" alt="{E(alt(a))}" width="1600" height="686" fetchpriority="high" decoding="async" style="object-fit:cover"><small class="cr">{E(cr)}</small></figure>' if full else f'<figure class="cv" style="display:none"><i class="ph" data-s="{a["slug"]}" data-a="{E(alt(a))}"></i><small class="cr"></small></figure>'}<article class="ar" id="c"><nav class="bc" aria-label="Você está em"><a href="../index.html">Início</a> › <a href="../index.html#{a["cat"].lower()}">{a["cat"]}</a></nav><span class="tg">{a["cat"]}</span><h1>{E(a["title"])}</h1><p class="ld">{E(a["lead"])}</p><div class="mt">Por Redação {NAME} · <time datetime="{a["date"]}">{dt(a["date"])}</time> · {a["mins"]} min de leitura</div>{body}{facts}<p class="src">Fontes: {a["src"]}</p></article><main class="w"><h2 class="sc">Leia também</h2><div class="gr">{"".join(card(r,"../") for r in rel)}</div></main>' + foot("../")
+    pg += f'{f'<figure class="cv"><img src="{full}" alt="{E(alt(a))}" width="1600" height="686" fetchpriority="high" decoding="async" style="object-fit:cover"><small class="cr">{E(cr)}</small></figure>' if full else ''}<article class="ar" id="c"><nav class="bc" aria-label="Você está em"><a href="../index.html">Início</a> › <a href="../index.html#{a["cat"].lower()}">{a["cat"]}</a></nav><span class="tg">{a["cat"]}</span><h1>{E(a["title"])}</h1><p class="ld">{E(a["lead"])}</p><div class="mt">Por Redação {NAME} · <time datetime="{a["date"]}">{dt(a["date"])}</time> · {a["mins"]} min de leitura</div>{body}{facts}<p class="src">Fontes: {a["src"]}</p></article><main class="w"><h2 class="sc">Leia também</h2><div class="gr">{"".join(card(r,"../") for r in rel)}</div></main>' + foot("../")
     pg += '<script>var b=document.getElementById("pb");addEventListener("scroll",function(){var h=document.documentElement;b.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%"})</script></body></html>'
     write(path, pg)
 

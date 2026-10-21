@@ -1,0 +1,22 @@
+# Portal de Notícias BR
+
+> Portal de notícias sobre o Brasil em português, com fontes citadas em cada matéria.
+
+## Páginas
+- [Início](https://portalnoticiasbr.site/)
+- [Todas as notícias](https://portalnoticiasbr.site/noticias/)
+- [RSS](https://portalnoticiasbr.site/rss.xml)
+
+## Notícias
+- [Agenda dos presidenciáveis: Flávio em SP e Fortaleza; Lula em Belo Horizonte](https://portalnoticiasbr.site/noticias/agenda-dos-presidenciaveis-flavio-em-sp-e-fortaleza-lula-em-belo-horizonte.html): Candidatos cumprem compromissos de campanha nesta quarta (21) em São Paulo, Fortaleza e Belo Horizonte a quatro dias do segundo turno.
+- [Qualidade do ar melhora em Manaus, mas aulas presenciais seguem suspensas](https://portalnoticiasbr.site/noticias/qualidade-do-ar-melhora-em-manaus-mas-aulas-presenciais-seguem-suspensas.html): Fumaça de queimadas mantém aulas suspensas na rede municipal; governo reconheceu emergência em 46 municípios e liberou R$ 17,8 milhões.
+- [Negacionismo impulsiona sarampo nos EUA e representa ameaça ao Brasil](https://portalnoticiasbr.site/noticias/negacionismo-impulsiona-sarampo-nos-eua-e-representa-ameaca-ao-brasil.html): EUA registram pior surto de sarampo em mais de três décadas, com mais de 4,4 mil casos; Brasil tem 61 casos em 2026, maioria importados.
+- [Chuvas e tempestades avançam pelo Brasil a partir desta quarta](https://portalnoticiasbr.site/noticias/chuvas-e-tempestades-avancam-pelo-brasil-a-partir-desta-quarta.html): Regiões Sul, Centro-Oeste e Sudeste podem ser as mais afetadas; Norte também tem previsão de pancadas intensas.
+- [Governo envia ao Congresso proposta de tarifa zero no transporte](https://portalnoticiasbr.site/noticias/governo-envia-ao-congresso-proposta-de-tarifa-zero-no-transporte.html): Proposta de tarifa zero de ônibus aos finais de semana foi encaminhada; Lula também sancionou lei que perdoa dívidas e amplia limite de MEI.
+- [Datafolha: empate técnico entre Flávio Bolsonaro e Lula no segundo turno](https://portalnoticiasbr.site/noticias/datafolha-empate-tecnico-entre-flavio-bolsonaro-e-lula-no-segundo-turno.html): Pesquisa aponta Flávio com 51% e Lula com 49% dos votos válidos; margem de erro mantém empate técnico a quatro dias da votação.
+- [Lei que perdoa dívidas e aumenta limite de MEI é sancionada](https://portalnoticiasbr.site/noticias/lei-que-perdoa-dividas-e-aumenta-limite-de-mei-e-sancionada.html): Novo teto de faturamento sobe para R$ 140 mil ao ano e há perdão de débitos federais de microempreendedores individuais.
+- [Procon paulistano multa Enel por falhas no fornecimento de energia](https://portalnoticiasbr.site/noticias/procon-paulistano-multa-enel-por-falhas-no-fornecimento-de-energia.html): Órgão de defesa do consumidor aplicou multa à concessionária após reclamações de interrupções e demora no restabelecimento.
+- [Metrô de São Paulo amplia uso do Pix no autoatendimento](https://portalnoticiasbr.site/noticias/metro-de-sao-paulo-amplia-uso-do-pix-no-autoatendimento.html): Passageiros passam a ter mais opções de pagamento digital nas estações da capital paulista.
+- [Comitê da Meta aponta falhas na proteção de eleições e cita Brasil](https://portalnoticiasbr.site/noticias/comite-da-meta-aponta-falhas-na-protecao-de-eleicoes-e-cita-brasil.html): Órgão de supervisão da Meta criticou aplicação excessiva de políticas de fraude em contas de anúncios da campanha de Lula.
+- [MP Eleitoral pede ampla divulgação de mudanças de locais de votação](https://portalnoticiasbr.site/noticias/mp-eleitoral-pede-ampla-divulgacao-de-mudancas-de-locais-de-votacao.html): Mais de 400 seções foram alteradas, afetando cerca de 130 mil eleitores em 22 estados; Minas, Paraná e Amapá concentram a maioria.
+- [Ato em apoio à democracia e a Lula reúne milhares no Rio e Brasília](https://portalnoticiasbr.site/noticias/ato-em-apoio-a-democracia-e-a-lula-reune-milhares-no-rio-e-brasilia.html): Mobilizações ocorreram em cerca de 500 cidades; no Rio, ato musical na orla de Copacabana; em Brasília, na Esplanada dos Ministérios.
