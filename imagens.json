@@ -1,10 +1,10 @@
 {
  "agenda-dos-presidenciaveis-flavio-em-sp-e-fortaleza-lula-em-belo-horizonte": {
   "id": "agenda-dos-presidenciaveis-flavio-em-sp-e-fortaleza-lula-em-belo-horizonte",
-  "url": "img/segundo-turno-25-de-outubro.png",
+  "url": "img/agenda-dos-presidenciaveis-flavio-em-sp-e-fortaleza-lula-em-belo-horizonte.jpg",
   "page": "",
-  "by": "Arte EBC / Agência Brasil",
-  "alt": "Segundo turno das eleições 25 de outubro",
+  "by": "Unsplash",
+  "alt": "Campanha e eleições",
   "local": true
  },
  "qualidade-do-ar-melhora-em-manaus-mas-aulas-presenciais-seguem-suspensas": {
@@ -33,26 +33,26 @@
  },
  "governo-envia-ao-congresso-proposta-de-tarifa-zero-no-transporte": {
   "id": "governo-envia-ao-congresso-proposta-de-tarifa-zero-no-transporte",
-  "url": "img/governo-envia-ao-congresso-proposta-de-tarifa-zero-no-transporte.svg",
+  "url": "img/governo-envia-ao-congresso-proposta-de-tarifa-zero-no-transporte.jpg",
   "page": "",
-  "by": "Arte Portal de Notícias BR",
-  "alt": "Governo envia ao Congresso proposta de tarifa zero no transporte",
+  "by": "Unsplash",
+  "alt": "Transporte público",
   "local": true
  },
  "comite-da-meta-aponta-falhas-na-protecao-de-eleicoes-e-cita-brasil": {
   "id": "comite-da-meta-aponta-falhas-na-protecao-de-eleicoes-e-cita-brasil",
-  "url": "img/comite-da-meta-aponta-falhas-na-protecao-de-eleicoes-e-cita-brasil.svg",
+  "url": "img/comite-da-meta-aponta-falhas-na-protecao-de-eleicoes-e-cita-brasil.jpg",
   "page": "",
-  "by": "Arte Portal de Notícias BR",
-  "alt": "Comitê da Meta aponta falhas na proteção de eleições e cita Brasil",
+  "by": "Unsplash",
+  "alt": "Tecnologia e dados",
   "local": true
  },
  "datafolha-empate-tecnico-entre-flavio-bolsonaro-e-lula-no-segundo-turno": {
   "id": "datafolha-empate-tecnico-entre-flavio-bolsonaro-e-lula-no-segundo-turno",
-  "url": "img/datafolha-flavio-47-lula-45-segundo-turno.png",
+  "url": "img/datafolha-empate-tecnico-entre-flavio-bolsonaro-e-lula-no-segundo-turno.jpg",
   "page": "",
-  "by": "Arte / dados Datafolha",
-  "alt": "Pesquisa Datafolha segundo turno",
+  "by": "Unsplash",
+  "alt": "Urna e votação",
   "local": true
  },
  "mp-eleitoral-pede-ampla-divulgacao-de-mudancas-de-locais-de-votacao": {
@@ -65,10 +65,10 @@
  },
  "lei-que-perdoa-dividas-e-aumenta-limite-de-mei-e-sancionada": {
   "id": "lei-que-perdoa-dividas-e-aumenta-limite-de-mei-e-sancionada",
-  "url": "img/lei-que-perdoa-dividas-e-aumenta-limite-de-mei-e-sancionada.svg",
+  "url": "img/lei-que-perdoa-dividas-e-aumenta-limite-de-mei-e-sancionada.jpg",
   "page": "",
-  "by": "Arte Portal de Notícias BR",
-  "alt": "Lei que perdoa dívidas e aumenta limite de MEI é sancionada",
+  "by": "Unsplash",
+  "alt": "Negócios e documentos",
   "local": true
  },
  "ato-em-apoio-a-democracia-e-a-lula-reune-milhares-no-rio-e-brasilia": {
@@ -81,18 +81,18 @@
  },
  "procon-paulistano-multa-enel-por-falhas-no-fornecimento-de-energia": {
   "id": "procon-paulistano-multa-enel-por-falhas-no-fornecimento-de-energia",
-  "url": "img/procon-paulistano-multa-enel-por-falhas-no-fornecimento-de-energia.svg",
+  "url": "img/procon-paulistano-multa-enel-por-falhas-no-fornecimento-de-energia.jpg",
   "page": "",
-  "by": "Arte Portal de Notícias BR",
-  "alt": "Procon paulistano multa Enel por falhas no fornecimento de energia",
+  "by": "Unsplash",
+  "alt": "Rede elétrica",
   "local": true
  },
  "metro-de-sao-paulo-amplia-uso-do-pix-no-autoatendimento": {
   "id": "metro-de-sao-paulo-amplia-uso-do-pix-no-autoatendimento",
-  "url": "img/metro-de-sao-paulo-amplia-uso-do-pix-no-autoatendimento.svg",
+  "url": "img/metro-de-sao-paulo-amplia-uso-do-pix-no-autoatendimento.jpg",
   "page": "",
-  "by": "Arte Portal de Notícias BR",
-  "alt": "Metrô de São Paulo amplia uso do Pix no autoatendimento",
+  "by": "Unsplash",
+  "alt": "Metrô e transporte urbano",
   "local": true
  }
 }
